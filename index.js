@@ -38,7 +38,6 @@ while(erro >= precisao) {
         xAtual = xAntigo - valor
         console.log(`Passo: ${step}\nValor de X${step+1} = ${xAtual}`)
         erro = Math.abs(xAntigo - xAtual)
-        console.log(erro)
         xAntigo = xAtual
         step++
     } catch (error) {
