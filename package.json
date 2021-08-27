@@ -1,0 +1,26 @@
+{
+  "name": "metododenewtonraphson",
+  "version": "1.0.0",
+  "description": "Um trabalho da faculdade de engenharia da cumputação (FACAMP) referente a diciplina Cálculo Numérico e Programação Matemática.",
+  "main": "index.js",
+  "scripts": {
+    "start": "node ."
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/hhs0001/MetodoDeNewtonRaphson.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/hhs0001/MetodoDeNewtonRaphson/issues"
+  },
+  "homepage": "https://github.com/hhs0001/MetodoDeNewtonRaphson#readme",
+  "dependencies": {
+    "evaluatex": "^2.2.0",
+    "expr-eval": "^2.0.2",
+    "mathjs": "^9.4.4",
+    "prompt-sync": "^4.2.0"
+  }
+}
