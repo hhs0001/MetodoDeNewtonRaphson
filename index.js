@@ -1,15 +1,30 @@
 const prompt = require("prompt-sync")();
-const evaluatex = require("evaluatex")
 const math = require("mathjs")
 const Parser = require('expr-eval').Parser;
 const parser = new Parser();
 let funcao = prompt("Qual a função? ");
+try {
+    let derivada =  math.derivative(funcao, 'x');
+} catch (error) {
+    console.log("A sua função é inválida!")
+    return
+}
 let derivada =  math.derivative(funcao, 'x');
 derivada = derivada.compile()
 let precisao = prompt("Qual a precisão desejada? ")
-precisao = Number(precisao);
+try {
+    precisao = Number(precisao);
+    precisao = Math.abs(precisao)
+} catch (error) {
+    console.log("Precisão inválida!")
+    return
+}
 let xIni = prompt("Qual o X inicial? ")
-xIni = Number(xIni);
+try {
+    xIni = Number(xIni);
+} catch (error) {
+    console.log("X inicial inválido!")
+}
 let xAtual = 0
 let xAntigo = 0
 let valor = 0
