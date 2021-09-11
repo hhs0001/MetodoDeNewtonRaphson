@@ -38,7 +38,7 @@ Inicie
 ## Autores
 
 - [@Heitor Stein](https://github.com/hhs0001)
-- [@Pedro Domene]()
+- [@Pedro Domene](https://github.com/Preru01)
 
   
 ## Licença
