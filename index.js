@@ -1,47 +1,42 @@
+const term = require('terminal-kit').terminal;
+metodos = require('./metodos')
 const prompt = require("prompt-sync")();
-const math = require("mathjs")
-const Parser = require('expr-eval').Parser;
-const parser = new Parser();
-let funcao = prompt("Qual a função? ");
-try {
-    let derivada =  math.derivative(funcao, 'x');
-} catch (error) {
-    console.log("A sua função é inválida!")
-    return
-}
-let derivada =  math.derivative(funcao, 'x');
-derivada = derivada.compile()
-let precisao = prompt("Qual a precisão desejada? ")
-try {
-    precisao = Number(precisao);
-    precisao = Math.abs(precisao)
-} catch (error) {
-    console.log("Precisão inválida!")
-    return
-}
-let xIni = prompt("Qual o X inicial? ")
-try {
-    xIni = Number(xIni);
-} catch (error) {
-    console.log("X inicial inválido!")
-}
-let xAtual = 0
-let xAntigo = 0
-let valor = 0
-let step = 0
-let erro = 1
-if(!xAntigo) xAntigo = xIni
-
-while(erro >= precisao) {
-    try {
-        valor = math.evaluate(`(${funcao})/(${derivada.evaluate({x:xAntigo})})`, {x:xAntigo})
-        xAtual = xAntigo - valor
-        console.log(`Passo: ${step}\nValor de X${step+1} = ${xAtual}`)
-        erro = Math.abs(xAntigo - xAtual)
-        xAntigo = xAtual
-        step++
-    } catch (error) {
-        console.log(error)
+console.clear();
+term.cyan('Seja bem-vindo(a) ao propragrama para solucionar \n');
+term.cyan('O metodo de Método de Newton ou Método das Secantes\n');
+term.green('Selecione seu método:\n');
+const itens1 = [`a. Método de Newton`,`b. Método das Secantes`]
+term.singleColumnMenu(itens1 , function( error , response ) {
+    
+	if(response.selectedIndex === 0){
+        console.clear();
+        let funcao = prompt("Qual a função? ");
+        let precisao = prompt("Qual a precisão desejada? ")
+        let xIni = prompt("Qual o X inicial? ")
+        let obj = metodos.metodoPadrao(funcao, precisao, xIni)
+        let count = 0
+        obj.forEach(element => {
+            term(`Valor de ^CX${count}: ^G${element.valor}\n`)
+            term(`Valor da margem de ^Yerro: ^R${element.erro}\n\n`)
+            count++
+        });
+        term(`Processo finalizado apos ^R${count--}^: interações`)
+        process.exit()
+        process.exit()
+    } else {
+        console.clear();
+        let funcaoS = prompt("Qual a função? ");
+        let precisaoS = prompt("Qual a precisão desejada? ")
+        let xIni1 = prompt("Qual o X inicial 1? ")
+        let xIni2 = prompt("Qual o X inicial 2? ")
+        let objS = metodos.metodoSecantes(funcaoS, xIni1, xIni2, precisaoS)
+        let count = 0
+        objS.forEach(element => {
+            term(`Valor de ^CX${count}: ^G${element.valor}\n`)
+            term(`Valor da margem de ^Yerro: ^R${element.erro}\n\n`)
+            count++
+        });
+        term(`Processo finalizado apos ^R${count--}^: interações`)
+        process.exit()
     }
-
-}
+});
