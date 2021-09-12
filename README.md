@@ -31,7 +31,7 @@ Instale as dependências
 Inicie
 
 ```bash
-  npm run start
+  npm start
 ```
 
   
