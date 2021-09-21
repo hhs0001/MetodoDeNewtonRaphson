@@ -40,6 +40,7 @@ Inicie
 Método de Newton
 
 ![Método de Newton GIF](https://media3.giphy.com/media/nUbWBqoIiSnkA3FBkw/giphy.gif?cid=790b76117a61466deb2eefe696f295cc955978b1822f1196&rid=giphy.gif&ct=g)
+Link do Gif: https://media3.giphy.com/media/nUbWBqoIiSnkA3FBkw/giphy.gif?cid=790b76117a61466deb2eefe696f295cc955978b1822f1196&rid=giphy.gif&ct=g
 
 ```
 Qual a função? x^3
@@ -111,6 +112,7 @@ Processo finalizado apos 20 interações
 Método das Secantes
 
 ![Método das Secantes GIF](https://media0.giphy.com/media/JJEMiqUVBax1c8yCxr/giphy.gif?cid=790b76117ef93b08c9eda9a20afb1802ed9e3331d5433986&rid=giphy.gif&ct=g)
+Link do Gif: https://media0.giphy.com/media/JJEMiqUVBax1c8yCxr/giphy.gif?cid=790b76117ef93b08c9eda9a20afb1802ed9e3331d5433986&rid=giphy.gif&ct=g
 
 ```
 Qual a função? x^3
